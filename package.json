@@ -7,7 +7,9 @@
     "start": "next start",
     "test": "jest",
     "fix": "prettier --write '{./pages,src}/**/*.{js,jsx,ts,tsx}'",
-    "lint": "eslint . --cache --fix -c .eslintrc.js --ignore-pattern './*.js'"
+    "lint": "eslint . --cache --fix -c .eslintrc.js --ignore-pattern './*.js'",
+    "storybook": "start-storybook",
+    "build-storybook": "build-storybook -p 6006"
   },
   "husky": {
     "hooks": {
@@ -26,6 +28,10 @@
     "react-dom": "^16.13.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.11.4",
+    "@storybook/addon-essentials": "^6.0.20",
+    "@storybook/preset-typescript": "^3.0.0",
+    "@storybook/react": "^6.0.20",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^10.4.9",
     "@testing-library/react-hooks": "^3.4.1",
@@ -49,12 +55,12 @@
     "jest": "^26.4.2",
     "jest-watch-typeahead": "^0.6.0",
     "lint-staged": "^10.2.13",
-    "postcss-flexbugs-fixes": "4.2.1",
+    "postcss-flexbugs-fixes": "^4.2.1",
     "postcss-preset-env": "^6.7.0",
     "prettier": "^2.1.1",
     "react-test-renderer": "^16.13.1",
-    "sass": "^1.26.10",
     "tailwindcss": "^1.7.4",
+    "ts-loader": "^8.0.3",
     "typescript": "^4.0.2"
   },
   "license": "MIT"
