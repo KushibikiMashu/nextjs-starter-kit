@@ -1,0 +1,17 @@
+{
+  "extends": ["config:base"],
+  "lockFileMaintenance": true,
+  "packageRules": [
+    {
+      "packagePatterns": ["*"]
+    },
+    {
+      "depTypeList": ["dependencies"],
+      "groupName": "dependencies"
+    },
+    {
+      "depTypeList": ["devDependencies"],
+      "groupName": "devDependencies"
+    }
+  ]
+}
