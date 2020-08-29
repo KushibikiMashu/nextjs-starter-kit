@@ -5,7 +5,9 @@ type Props = {
 }
 
 export const Component: React.FC<Props> = (props) => (
-  <h1 className="text-5xl text-center text-accent-1">Hello, {props.target}</h1>
+  <h1 className="text-5xl text-center text-accent-1">
+    Hello, <span className="text-teal-600">{props.target}</span>
+  </h1>
 )
 
 type ContainerProps = {
@@ -13,7 +15,7 @@ type ContainerProps = {
 }
 
 const Container: React.FC<ContainerProps> = (props) => {
-  const target = props.target || 'World'
+  const target = props.target || 'world'
 
   return <Component target={target} />
 }
