@@ -6,6 +6,7 @@
     "build": "next build",
     "start": "next start",
     "test": "jest",
+    "fix": "prettier --write '{./pages,src}/**/*.{js,jsx,ts,tsx}'",
     "lint": "eslint . --cache --fix -c .eslintrc.js --ignore-pattern './*.js'"
   },
   "husky": {
@@ -15,6 +16,7 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
+      "npm run fix",
       "npm run lint"
     ]
   },
