@@ -6,7 +6,7 @@
     "build": "next build",
     "start": "next start",
     "test": "jest",
-    "eslint": "eslint . --cache --fix -c .eslintrc.js --ignore-pattern './*.js'"
+    "lint": "eslint . --cache --fix -c .eslintrc.js --ignore-pattern './*.js'"
   },
   "husky": {
     "hooks": {
