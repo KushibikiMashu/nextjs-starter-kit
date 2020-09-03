@@ -20,6 +20,6 @@ const Container: React.FC<ContainerProps> = (props) => {
   return <Component target={target} />
 }
 
-Container.displayName = 'Hello'
+Container.displayName = 'Greeting'
 
 export default Container
