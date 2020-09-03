@@ -61,7 +61,6 @@ module.exports = {
       },
     ],
     'import/no-unresolved': 'off',
-    'import/order': 'off',
     'react/prop-types': ['off'],
     // windowやlocationを使えなくなるためoff
     'no-restricted-globals': 'off',
@@ -86,5 +85,16 @@ module.exports = {
     'no-use-before-define': 'off',
     // TypeScriptのconstructorのfieldは空でOK
     'no-useless-constructor': 'off',
+    // 依存モジュールを並び替える
+    'sort-imports': ['error', { ignoreDeclarationSort: true }],
+    'import/order': [
+      'error',
+      {
+        alphabetize: {
+          order: 'asc',
+          caseInsensitive: false,
+        },
+      },
+    ],
   },
 }

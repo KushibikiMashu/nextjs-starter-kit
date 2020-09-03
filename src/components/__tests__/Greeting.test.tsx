@@ -1,6 +1,7 @@
 import '@testing-library/jest-dom'
-import React from 'react'
 import { render, screen } from '@testing-library/react'
+import React from 'react'
+
 import Greeting from '../Greeting'
 
 describe('Greeting', () => {
