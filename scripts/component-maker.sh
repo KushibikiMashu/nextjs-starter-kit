@@ -8,7 +8,7 @@ if [ $# -ne 1 ]; then
 fi
 
 COMPONENT=$1
-TARGET="src/Components/$COMPONENT"
+TARGET="src/components/$COMPONENT"
 
 if [ -e "$TARGET" ]; then
   echo "ディレクトリ'$TARGET'は既に存在します。" 1>&2
@@ -19,9 +19,6 @@ mkdir "$TARGET"
 touch "$TARGET/index.tsx"
 echo "export { default } from './$COMPONENT'" > "$TARGET/index.tsx"
 
-cp etc/scripts/templates/component-template.txt "$TARGET/$COMPONENT.tsx"
-
-#touch "$TARGET/style.scss"
+cp scripts/templates/component-template.txt "$TARGET/$COMPONENT.tsx"
 
 sed -i -e "s/DISPLAY_NAME/\'$COMPONENT\'/" "$TARGET/$COMPONENT.tsx"
-rm "$TARGET/$COMPONENT.tsx-e"

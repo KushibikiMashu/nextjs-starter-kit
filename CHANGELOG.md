@@ -1,5 +1,6 @@
 # Changelog
 
+- fix: remove bug from component script
 - improvement: Remove unused component
 - improvement: Fix Next.js version as 9.5.3
 
