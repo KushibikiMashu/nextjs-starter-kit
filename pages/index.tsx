@@ -1,4 +1,4 @@
-import Greeting from 'src/components/Greeting'
+import Greeting from '~/src/components/Greeting'
 
 export default function IndexPage() {
   return (

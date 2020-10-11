@@ -1,5 +1,7 @@
 # Changelog
 
+- improvement: apply absolute import
+
 ## v1.1.0
 - improvement: update Next.js version to 9.5.4
 - improvement: change _app.js and index.js to tsx file
