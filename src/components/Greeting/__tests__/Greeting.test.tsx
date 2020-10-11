@@ -2,7 +2,7 @@ import '@testing-library/jest-dom'
 import { render, screen } from '@testing-library/react'
 import React from 'react'
 
-import Greeting from '../Greeting'
+import Greeting from '../index'
 
 describe('Greeting', () => {
   test('propsを渡さないとき、worldという文字が表示される', () => {
