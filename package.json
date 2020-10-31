@@ -18,8 +18,8 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
-      "npm run fix",
-      "npm run lint"
+      "eslint --fix",
+      "prettier --write"
     ]
   },
   "dependencies": {
