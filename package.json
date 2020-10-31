@@ -23,9 +23,9 @@
     ]
   },
   "dependencies": {
-    "next": "^9.5.4",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "next": "^10.0.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.11.4",
@@ -55,6 +55,7 @@
     "jest": "^26.4.2",
     "jest-watch-typeahead": "^0.6.0",
     "lint-staged": "^10.2.13",
+    "npm-check-updates": "^9.2.3",
     "postcss-flexbugs-fixes": "^4.2.1",
     "postcss-preset-env": "^6.7.0",
     "prettier": "^2.1.1",
@@ -68,3 +69,4 @@
   },
   "license": "MIT"
 }
+
