@@ -1,6 +1,9 @@
 # Changelog
 
+## v.1.2.0
+- improvement: update Next.js v10, React v17, Tailwind CSS v1.9
 - improvement: apply absolute import
+- refactor: simplify pre-commit hook
 
 ## v1.1.0
 - improvement: update Next.js version to 9.5.4
