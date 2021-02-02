@@ -5,13 +5,14 @@ module.exports = {
     node: true,
   },
   extends: [
-    'plugin:react/recommended',
-    'standard',
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
+    'plugin:react/recommended',
+    'plugin:react-hooks/recommended',
+    'plugin:jsx-a11y/recommended',
+    'plugin:import/typescript',
     // 競合を避けるため、prettierは一番最後に書く
     'plugin:prettier/recommended',
-    'prettier/react',
     'prettier/@typescript-eslint',
   ],
   globals: {
@@ -23,7 +24,7 @@ module.exports = {
     ecmaFeatures: {
       jsx: true,
     },
-    ecmaVersion: 2018,
+    ecmaVersion: 2021,
     sourceType: 'module',
     project: './tsconfig.json',
   },
@@ -31,70 +32,76 @@ module.exports = {
     react: {
       version: 'detect',
     },
+    'import/resolver': {
+      node: {
+        extensions: ['.js', '.ts', '.tsx'],
+      },
+    },
   },
-  plugins: ['@typescript-eslint', 'react', 'react-hooks', 'prettier'],
+  plugins: ['jsx-a11y', 'import'],
   rules: {
-    // prettierを実行する
-    'import-name': 'off',
-    align: 'off',
-    // 「import Link from 'next/link'」で引っかかるため無効化
-    'no-submodule-imports': 'off',
-    // css['foo--bar']で引っかかるため無効化
-    'no-string-literal': 'off',
-    // onClick={e => handleClick(e)}で引っかかるため無効化
-    'jsx-no-lambda': 'off',
-    'react-hooks/rules-of-hooks': 'error',
-    'react/jsx-filename-extension': [
+    // prettier の設定
+    'prettier/prettier': [
       'error',
       {
-        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+        trailingComma: 'es5',
+        tabWidth: 2,
+        semi: false,
+        singleQuote: true,
+        printWidth: 120,
       },
     ],
-    // import構文でエラーが出るため
-    'import/extensions': [
-      'off',
-      {
-        js: 'never',
-        jsx: 'never',
-        ts: 'never',
-        tsx: 'never',
-      },
-    ],
-    'import/no-unresolved': 'off',
-    'react/prop-types': ['off'],
-    // windowやlocationを使えなくなるためoff
-    'no-restricted-globals': 'off',
-    // [1, 2].map((item, index) => <li key={index}>{item}</li>)
-    // のように、indexをkeyとして使えなくなるためoff
-    'react/no-array-index-key': 'off',
-    // 毎回Reactをインポートしなくてもよくするためにoff
+    // React Hooks のための設定
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'warn',
+    // prop types を使っていないので off
+    'react/prop-types': 'off',
+    // Next.js では React を import しなくてもよいので off にする
     'react/react-in-jsx-scope': 'off',
-    'react/jsx-one-expression-per-line': 'off',
+    // 関数の引数や返り値に必ず型をつけるルールを off にする
+    // アプリケーションをより堅牢にしたい場合は、このルールを on にしてください
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
     // next/linkのchildのaタグの空hrefを許容する
     'jsx-a11y/anchor-is-valid': 'off',
-    // コメントの前後にスペースがないことを許容
-    'spaced-comment': 'off',
-    '@typescript-eslint/explicit-function-return-type': 'off',
-    // 使っていない変数はエラーにする
+    // 未使用の変数がある場合エラーにする（デフォルトは warning）
     '@typescript-eslint/no-unused-vars': 'error',
-    // referrerをつけれるようにする
-    'react/jsx-no-target-blank': 'off',
-    // 関数の型定義を必ず書かなくてもよくする
-    '@typescript-eslint/explicit-module-boundary-types': 'off',
-    // stylesをComponentとContainerの間に置くため
-    'no-use-before-define': 'off',
-    // TypeScriptのconstructorのfieldは空でOK
-    'no-useless-constructor': 'off',
-    // 依存モジュールを並び替える
-    'sort-imports': ['error', { ignoreDeclarationSort: true }],
+    // named-exportを許可
+    'import/prefer-default-export': 'off',
+    // 絶対パスでのモジュールの読み込みをokにする
+    'import/no-unresolved': 'off',
+    // 「import Link from 'next/link'」で引っかかるため無効化
+    'no-submodule-imports': 'off',
+    // importの順番を整理する
     'import/order': [
       'error',
       {
+        pathGroups: [
+          {
+            pattern: '~/**',
+            group: 'external',
+            position: 'after',
+          },
+        ],
+        'newlines-between': 'always',
         alphabetize: {
           order: 'asc',
           caseInsensitive: false,
         },
       },
     ],
-  },
+    // if文内のcontinueをokにする
+    'no-continue': 'off',
+    // for (const a of A) を許可
+    'no-restricted-syntax': 'off',
+    // onClick={e => handleClick(e)} で引っかかるため無効化
+    'jsx-no-lambda': 'off',
+    // <Component {...props}>を許可する
+    'react/jsx-props-no-spreading': 'off',
+    // 順序の入れ替えがない場合はok
+    'react/no-array-index-key': 'off',
+    // component の props の destructuring を非必須にする
+    'react/destructuring-assignment': 'off',
+    // console.errorを許容する
+    'no-console': ['error', {allow: ['warn', 'error']}],
+  }
 }
