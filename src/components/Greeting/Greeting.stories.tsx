@@ -1,4 +1,5 @@
 import { Meta, Story } from '@storybook/react'
+
 import { Component as Greeting, Props } from './Greeting'
 
 export default {
