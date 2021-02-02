@@ -1,1 +1,7 @@
-.eslintrc.js
+# Next.js
+/.next
+/public
+/out
+
+# config
+next.config.js
