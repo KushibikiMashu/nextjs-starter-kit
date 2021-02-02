@@ -1,5 +1,9 @@
 # Changelog
 
+## v.2.0.0
+- breaking: update Next.js, React, Tailwind CSS etc.
+- breaking: update tailwind.config.js and postcss.config.js
+
 ## v.1.3.0
 - simplify eslint settings
 - apply typescript strict mode
