@@ -1,5 +1,8 @@
 # Changelog
 
+## v.2.0.1
+- fix: remove unused github workflow
+
 ## v.2.0.0
 - breaking: update Next.js, React, Tailwind CSS etc.
 - breaking: update tailwind.config.js and postcss.config.js
