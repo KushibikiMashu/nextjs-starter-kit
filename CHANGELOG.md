@@ -1,5 +1,10 @@
 # Changelog
 
+## v.1.3.0
+- simplify eslint settings
+- apply typescript strict mode
+- remove unused files
+
 ## v.1.2.0
 - improvement: update Next.js v10, React v17, Tailwind CSS v1.9
 - improvement: apply absolute import
