@@ -10,7 +10,8 @@
     "lint": "eslint . --cache",
     "lint:fix": "eslint . --cache --fix",
     "storybook": "start-storybook",
-    "build-storybook": "build-storybook -p 6006"
+    "build-storybook": "build-storybook -p 6006",
+    "tsc": "tsc"
   },
   "husky": {
     "hooks": {
