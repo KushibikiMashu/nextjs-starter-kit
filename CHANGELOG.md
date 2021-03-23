@@ -1,5 +1,9 @@
 # Changelog
 
+## v.2.0.2
+- use yarn.lock instead of package-lock.json
+- update README.md
+
 ## v.2.0.1
 - fix: remove unused github workflow
 

@@ -1,6 +1,6 @@
 {
   "name": "next-starter-kit",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "scripts": {
     "dev": "next",
     "build": "next build",
