@@ -17,19 +17,13 @@ Next.js starter kit contains main library with minimum config files below:
 Clone a copy of the repo:
 
 ```sh
-$ git clone https://github.com/KushibikiMashu/nextjs-starter-kit.git
+$ npx create-next-app nextjs-starter-kit -e https://github.com/KushibikiMashu/nextjs-starter-kit/tree/main
 ```
 
 Change directory to the root:
 
 ```sh
 $ cd nextjs-starter-kit
-```
-
-Install dependencies:
-
-```sh
-$ npm ci
 ```
 
 Run development server:
