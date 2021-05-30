@@ -1,5 +1,17 @@
 # Changelog
 
+## v.2.1.0
+### feat
+- update tailwindcss module
+- update Next.js, react, react-dom
+- run husky on commit
+- run jest on jsdom environment
+- remove unused modules
+- use storybook with webpack5
+
+### fix
+- use green color instead of teal which was removed from tailwindcss v2
+
 ## v.2.0.2
 - use yarn.lock instead of package-lock.json
 - update README.md
