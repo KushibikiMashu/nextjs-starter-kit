@@ -9,8 +9,8 @@
     "fix": "prettier --write './**/*.{js,jsx,ts,tsx}'",
     "lint": "eslint . --cache",
     "lint:fix": "eslint . --cache --fix",
-    "storybook": "start-storybook",
-    "build-storybook": "build-storybook -p 6006",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
     "tsc": "tsc",
     "prepare": "husky install"
   },
