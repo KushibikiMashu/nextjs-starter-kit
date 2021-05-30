@@ -9,8 +9,8 @@ export type Props = {
 }
 
 export const Component: React.FC<Props> = (props) => (
-  <h1 className="text-5xl text-center text-accent-1">
-    Hello, <span className="text-teal-600">{props.target}</span>
+  <h1 className="text-5xl text-center">
+    Hello, <span className="text-green-600">{props.target}</span>
   </h1>
 )
 
