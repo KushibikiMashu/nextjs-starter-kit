@@ -11,9 +11,9 @@ module.exports = {
     'plugin:react-hooks/recommended',
     'plugin:jsx-a11y/recommended',
     'plugin:import/typescript',
+    'plugin:@next/next/recommended',
     // 競合を避けるため、prettierは一番最後に書く
     'plugin:prettier/recommended',
-    'prettier/@typescript-eslint',
   ],
   globals: {
     Atomics: 'readonly',

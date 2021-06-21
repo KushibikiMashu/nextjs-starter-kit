@@ -7,8 +7,8 @@
     "start": "next start",
     "test": "jest --env=jsdom",
     "fix": "prettier --write './**/*.{js,jsx,ts,tsx}'",
-    "lint": "eslint . --cache",
-    "lint:fix": "eslint . --cache --fix",
+    "lint": "next lint . --cache",
+    "lint:fix": "next lint . --cache --fix",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "tsc": "tsc",
@@ -21,6 +21,7 @@
   },
   "lint-staged": {
     "*.{ts,tsx}": [
+      "lint:next",
       "eslint --fix",
       "prettier --write"
     ]
