@@ -1,6 +1,6 @@
 {
   "name": "next-starter-kit",
-  "version": "2.1.0",
+  "version": "2.2.1",
   "scripts": {
     "dev": "next",
     "build": "next build",
@@ -9,7 +9,7 @@
     "fix": "prettier --write './**/*.{js,jsx,ts,tsx}'",
     "lint": "next lint . --cache",
     "lint:fix": "next lint . --cache --fix",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook -p 6006 --quiet",
     "build-storybook": "build-storybook",
     "tsc": "tsc",
     "prepare": "husky install",
