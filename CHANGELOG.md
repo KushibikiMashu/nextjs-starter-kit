@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.2.1
+### chore
+- add quiet option to start-storybook command
+
 ## 2.2.0
 ### feature
 - update Next.js to v11
