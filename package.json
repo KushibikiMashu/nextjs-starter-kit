@@ -7,12 +7,13 @@
     "start": "next start",
     "test": "jest --env=jsdom",
     "fix": "prettier --write './**/*.{js,jsx,ts,tsx}'",
-    "lint": "eslint . --cache",
-    "lint:fix": "eslint . --cache --fix",
+    "lint": "next lint . --cache",
+    "lint:fix": "next lint . --cache --fix",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "tsc": "tsc",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "ci": "concurrently 'yarn lint' 'yarn tsc' 'yarn test'"
   },
   "husky": {
     "hooks": {
@@ -21,12 +22,13 @@
   },
   "lint-staged": {
     "*.{ts,tsx}": [
+      "lint:next",
       "eslint --fix",
       "prettier --write"
     ]
   },
   "dependencies": {
-    "next": "^10.2.3",
+    "next": "^11.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
@@ -45,7 +47,9 @@
     "@typescript-eslint/parser": "^4.14.2",
     "autoprefixer": "^10.2.6",
     "babel-jest": "^27.0.2",
+    "concurrently": "^6.2.0",
     "eslint": "^7.19.0",
+    "eslint-config-next": "^11.0.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jsx-a11y": "^6.4.1",

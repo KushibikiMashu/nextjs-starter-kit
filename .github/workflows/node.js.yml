@@ -20,10 +20,22 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
+
+    # @see https://zenn.dev/odan/scraps/81b2738864a908#comment-71195269e61d4f
+    - name: cache node_modules
+      id: node_modules_cache_id
+      uses: actions/cache@v2
+      with:
+        path: |
+          node_modules
+        key: node-v${{ matrix.node-version }}-deps-${{ hashFiles(format('{0}{1}', github.workspace, '/yarn.lock')) }}
+
     - run: yarn install --frozen-lockfile
-    - run: yarn test
+    - run: yarn ci
+    - run: yarn build-storybook
     - run: yarn build
