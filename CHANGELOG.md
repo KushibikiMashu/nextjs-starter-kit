@@ -1,5 +1,26 @@
 # Changelog
 
+## 3.0.0
+### breaking
+- change absolute import
+
+Changed path to import modules under the src directory. When you use `src/hooks/useCounter` in React component, for example:
+
+```js
+// before
+import useCounter from '~/src/hooks/useCounter'
+```
+
+```js
+// after
+import useCounter from '@/hooks/useCounter'
+```
+
+### chore
+- solve a storybook warning
+- refactor: move style.css to assets
+- fix command on commit
+
 ## 2.2.1
 ### chore
 - add quiet option to start-storybook command
