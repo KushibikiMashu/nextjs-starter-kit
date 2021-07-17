@@ -14,7 +14,11 @@ Next.js starter kit contains main library with minimum config files below:
 - Storybook
 
 # Installation
-Clone or fork a copy of this repo.
+run `npx create-next-app`, clone or fork a copy of this repo.
+
+```sh
+$ npx create-next-app nextjs-starter-kit -e https://github.com/KushibikiMashu/nextjs-starter-kit
+```
 
 Change directory to the root:
 
